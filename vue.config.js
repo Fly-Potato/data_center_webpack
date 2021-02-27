@@ -4,4 +4,5 @@ module.exports = {
   ],
   publicPath: '/static/',
   outputDir: '../data_center/static/',
+  indexPath: '../templates/'
 }
