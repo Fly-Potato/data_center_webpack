@@ -22,7 +22,11 @@ export default {
         text: this.text
       }
       Axios.post(urls.bot_data.laisha2.material, data).then((res)=>{
-        console.log(res.text)
+        if(res.data.code){
+          alert("成功！")
+        }else{
+          alert(res.data.info)
+        }
       })
     }
   }
