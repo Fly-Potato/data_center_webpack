@@ -6,10 +6,10 @@ module.exports = {
   outputDir: '../data_center/static/',
   pages: {
     bot_data: {
-      entry: 'src/attest/main.js',
+      entry: 'src/bot_data/main.js',
       template: 'public/index.html',
       filename: '../templates/bot_data/index.html',
-      title: 'attest Page',
+      title: 'bot_data',
       chunks: ['chunk-vendors', 'chunk-common', 'bot_data']
     },
   }

@@ -1,60 +1,57 @@
 <template>
   <v-app>
-    <v-app-bar
-      app
-      color="primary"
-      dark
-    >
-      <div class="d-flex align-center">
-        <v-img
-          alt="Vuetify Logo"
-          class="shrink mr-2"
-          contain
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-dark.png"
-          transition="scale-transition"
-          width="40"
-        />
-
-        <v-img
-          alt="Vuetify Name"
-          class="shrink mt-1 hidden-sm-and-down"
-          contain
-          min-width="100"
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-name-dark.png"
-          width="100"
-        />
-      </div>
-
+    <!-- 顶部导航栏 -->
+    <v-app-bar clipped-left :elevation="0" dense app>
+      <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
+      <v-app-bar-title>API Test</v-app-bar-title>
       <v-spacer></v-spacer>
 
-      <v-btn
-        href="https://github.com/vuetifyjs/vuetify/releases/latest"
-        target="_blank"
-        text
-      >
-        <span class="mr-2">Latest Release</span>
-        <v-icon>mdi-open-in-new</v-icon>
-      </v-btn>
+      <!-- <div v-if="user.name" class="text-center">
+        <v-menu offset-y>
+          <template v-slot:activator="{ on, attrs }">
+            <v-chip icon text dark v-bind="attrs" v-on="on">
+              <v-avatar left>
+                <v-icon>mdi-account-circle</v-icon>
+              </v-avatar>
+              {{ user.name }}
+            </v-chip>
+          </template>
+          <v-list>
+            <v-list-item href="/auth/account/">
+              <v-list-item-title>用户中心</v-list-item-title>
+            </v-list-item>
+            <v-list-item href="/auth/logout/">
+              <v-list-item-title>登出</v-list-item-title>
+            </v-list-item>
+          </v-list>
+        </v-menu>
+      </div>
+      <v-btn v-else href="/auth/login/?next=/api_test/">登录</v-btn> -->
     </v-app-bar>
 
+    <!-- 侧边导航栏 -->
+    <v-navigation-drawer v-model="drawer" clipped app>
+      <v-list>
+        <v-list-item to="/laisha2">
+          <v-list-item-content>
+            laisha2
+          </v-list-item-content>
+        </v-list-item>
+      </v-list>
+    </v-navigation-drawer>
+
+    <!-- 主体页面 -->
     <v-main>
-      <HelloWorld/>
+      <v-container fluid>
+        <router-view></router-view>
+      </v-container>
     </v-main>
   </v-app>
 </template>
-
 <script>
-import HelloWorld from './components/HelloWorld';
-
 export default {
-  name: 'App',
-
-  components: {
-    HelloWorld,
-  },
-
   data: () => ({
-    //
-  }),
-};
+    drawer: true
+  })
+}
 </script>
