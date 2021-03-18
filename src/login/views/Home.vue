@@ -1,6 +1,6 @@
 <template>
   <div>
-    <!-- <v-btn class="g-recaptcha" data-sitekey="6LdMUIQaAAAAAB3Bj_aRVji7Ln2StxjKYEC2XYO8" :data-callback='onSubmit' data-action='submit'>提交</v-btn> -->
+    <!-- <v-btn class="g-recaptcha" data-sitekey="" :data-callback='onSubmit' data-action='submit'>提交</v-btn> -->
   </div>
 </template>
 
