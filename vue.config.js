@@ -12,5 +12,12 @@ module.exports = {
       title: 'bot_data',
       chunks: ['chunk-vendors', 'chunk-common', 'bot_data']
     },
+    login: {
+      entry: 'src/login/main.js',
+      template: 'public/index.html',
+      filename: '../templates/login/index.html',
+      title: 'login',
+      chunks: ['chunk-vendors', 'chunk-common', 'login']
+    },
   }
 }
