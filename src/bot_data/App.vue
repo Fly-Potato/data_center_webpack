@@ -37,6 +37,11 @@
             laisha2
           </v-list-item-content>
         </v-list-item>
+        <v-list-item to="/version">
+          <v-list-item-content>
+            version info
+          </v-list-item-content>
+        </v-list-item>
       </v-list>
     </v-navigation-drawer>
 
