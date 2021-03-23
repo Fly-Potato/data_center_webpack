@@ -4,6 +4,9 @@ var urls = {
         index: '/botdata/',
         laisha2: {
             material: '/botdata/laisha2/material/'
+        },
+        version_info: {
+            get: '/botdata/version_info/'
         }
     }
 }

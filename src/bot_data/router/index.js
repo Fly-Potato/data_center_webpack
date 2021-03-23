@@ -1,7 +1,8 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
-import LaiSha2 from '../views/LaiSha2.vue'
+import LaiSha2 from '../views/LaiSha2'
+import Version from '../views/Version'
 
 Vue.use(VueRouter)
 
@@ -16,14 +17,11 @@ const routes = [
     name: 'LaiSha2',
     component: LaiSha2
   },
-  // {
-  //   path: '/about',
-  //   name: 'About',
-  //   // route level code-splitting
-  //   // this generates a separate chunk (about.[hash].js) for this route
-  //   // which is lazy-loaded when the route is visited.
-  //   component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
-  // }
+  {
+    path: '/version',
+    name: 'Version',
+    component: Version
+  },
 ]
 
 const router = new VueRouter({
