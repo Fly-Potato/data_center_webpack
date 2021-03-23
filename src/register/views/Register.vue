@@ -43,6 +43,8 @@
 </template>
 
 <script>
+import axios from 'axios'
+import urls from '../../common/urls'
   export default {
     data: () => ({
       nickname: null,  // 昵称
@@ -57,7 +59,7 @@
           if(this.password1 == this.password2){
             await this.$recaptchaLoaded()
             const token = await this.$recaptcha('register')
-            console.log(token)
+            this.register(token)
           }else{
             alert("输入的密码不一致！")
           }
@@ -67,6 +69,17 @@
         
       },
       register(token) {
+        let data = {
+          username: this.username,
+          nickname: this.nickname,
+          email: this.email,
+          password1: this.password1,
+          password2: this.password2,
+          token: token
+        }
+        axios.post(urls.accounts.register, data).then((res) => {
+          console.log(res.data)
+        })
         console.log(token)
       }
     },
