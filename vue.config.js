@@ -19,5 +19,12 @@ module.exports = {
       title: 'login',
       chunks: ['chunk-vendors', 'chunk-common', 'login']
     },
+    register: {
+      entry: 'src/register/main.js',
+      template: 'public/index.html',
+      filename: '../templates/register.html',
+      title: 'register',
+      chunks: ['chunk-vendors', 'chunk-common', 'register']
+    },
   }
 }
